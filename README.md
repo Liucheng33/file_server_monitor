@@ -1,1 +1,8 @@
-# file_server_monitor
+
+
+#文件监控服务
+
+项目简介
+
+file_server_monitor是一个文件监控服务，监听目标路径下的文件是否有变更，若有变更则发送消息MQ通知
+并对下游系统提供文件下载API
