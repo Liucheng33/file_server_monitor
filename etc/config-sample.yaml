@@ -1,0 +1,40 @@
+
+# 监控配置
+monitor:
+  # 要监听的目录。必须是工作目录下的路径
+  # test1       监听当前目录下 test1 目录
+  # test1/test2 监听当前目录下 test1/test2 目录
+  # test1,*     监听当前目录下 test1 目录及其所有子目录（递归）
+  # .,*         监听当前目录及其所有子目录（递归）
+  includeDirs:
+    - test1,*
+
+
+  # 监听文件的格式，此类文件更改会执行 command 中的命令
+  # .go   后缀为 .go 的文件更改，会执行 command 中的命令
+  # .*    所有的文件更改都会执行 command 中的命令
+  types:
+    - .*
+
+  # 监听的事件类型，发生此类事件才执行 command 中的命令
+  # 没有该配置默认监听所有事件
+  # write   写入文件事件
+  # rename  重命名文件事件
+  # remove  移除文件事件
+  # create  创建文件事件
+  # chmod   更新文件权限事件(类unix)
+  events:
+    - write
+    - rename
+    - remove
+    - create
+    - chmod
+
+
+
+# 通知器
+notifier:
+
+  # 不启用通知，请留空 ""
+  callUrl: ""
+
